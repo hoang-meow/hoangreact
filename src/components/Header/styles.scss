@@ -1,0 +1,60 @@
+.menutop {
+    display: flex;
+    height: 45px;
+    width: 100%;
+    background-color: #ad180d;
+    color: #fff;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.btnlogin
+{
+    text-transform: none;
+    color: #fff;
+    background-color: #ad180d;
+    border: none;
+    height: 36px;
+    min-width: 64px;
+    padding: 0 16px;
+    align-items :center;
+    margin-right: 40px !important;
+}
+.menu {
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 111px;
+    background-color: #da2a1c;
+    border-bottom: 0.0625rem solid #ff8076
+}
+.layoutLef {
+    display: contents !important
+}
+
+.home-title{
+    color: #fff;
+    font-size: 20px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-weight: 700;
+}
+
+.v {
+    padding-left: 24px!important;
+}
