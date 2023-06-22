@@ -8,9 +8,12 @@ import DetailPage from './features/Todo/pages/DetailPage';
 import ListPage from './features/Todo/pages/ListPage';
 import Header from './components/Header';
 import productsApi from './api/productApi';
+import { data } from './container/Header/data';
+import Footer from './components/Footer';
 
 
 function App() {
+
 
   useEffect(() => {
     const params = {
@@ -23,9 +26,11 @@ function App() {
     fetchProducts();
   },[]);
   return (
+
+   
     <div className="App">
      
-      {<Header/>}
+      <Header data={data} is_login/>
       <BrowserRouter>
         <nav>
           <ul>
@@ -49,7 +54,7 @@ function App() {
           <Route path="albums" element={<AlbumFeature />} />
         </Routes>
       </BrowserRouter>
-      Footer
+      <Footer />
     </div>
   );
 }

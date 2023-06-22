@@ -11,8 +11,7 @@ function TodoForm(props) {
     const form = useForm({
         defaultValues:{
             title:'',
-
-        }
+        },
     })
     const handleSubmit = (values) =>{
         console.log("Todo submit",values);
