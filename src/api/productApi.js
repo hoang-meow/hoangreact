@@ -2,9 +2,9 @@ import axiosClient from "./axioisClients";
 
 const productsApi = {
 
-    getAll(params) {
-        const url = '/products';
-        return axiosClient.get(url, {params: params});
+    getAll() {
+        const url = '/loainoibat';
+        return axiosClient.get(url);
     },
     getById(id){
         const url = `/products/${id}`;

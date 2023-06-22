@@ -1,5 +1,5 @@
 // import './App.css';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Route, Routes, BrowserRouter } from 'react-router-dom';
 import AlbumFeature from './features/Album';
 import ErrorsRouter from './features/Todo/components/TodoErrors';
@@ -10,27 +10,31 @@ import Header from './components/Header';
 import productsApi from './api/productApi';
 import { data } from './container/Header/data';
 import Footer from './components/Footer';
-
+import ProductFeature from './features/TodoProducts';
 
 function App() {
-
-
+  const [dataProduct, setdataProduct] = useState([]);
   useEffect(() => {
-    const params = {
-      _limit :10,
-    };
-    const fetchProducts  = async () => {
-      const productList = await productsApi.getAll(params);
+    const fetchProducts = async () => {
+      const productList = await productsApi.getAll();
+      setdataProduct(productList);
       console.log(productList);
-    }
+    };
     fetchProducts();
-  },[]);
+  }, []);
+  let showData =
+    dataProduct ? (
+      <ProductFeature data={dataProduct} />
+    ) : (
+      <ErrorsRouter />
+    );
+    console.log('data',showData);
   return (
-
-   
     <div className="App">
-     
-      <Header data={data} is_login/>
+      <Header data={data} is_login />
+      {/* co data tra ve thi show */}
+      {showData}
+
       <BrowserRouter>
         <nav>
           <ul>
@@ -49,7 +53,6 @@ function App() {
           <Route path="todos" element={<ListPage />}>
             <Route path="listpage" element={<HomePage />} />
             <Route path=":id" element={<DetailPage />} />
-
           </Route>
           <Route path="albums" element={<AlbumFeature />} />
         </Routes>
